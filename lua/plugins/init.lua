@@ -52,10 +52,15 @@ return {
   {
     "williamboman/mason.nvim",
     log_level = vim.log.levels.DEBUG,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
         "clangd",
         "clang-format",
+        "vue-language-server",
+        "typescript-language-server",
       },
     },
   },
