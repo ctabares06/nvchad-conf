@@ -61,6 +61,8 @@ return {
         "clang-format",
         "vue-language-server",
         "typescript-language-server",
+        "prettierd",
+        "eslintd",
       },
     },
   },

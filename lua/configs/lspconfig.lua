@@ -52,7 +52,7 @@ lspconfig.volar.setup {
       hybridMode = false,
     },
     typescript = {
-      tsdk = "/home/ctr9120/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib/",
+      tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
     },
   },
 }
