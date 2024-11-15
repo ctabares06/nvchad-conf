@@ -77,19 +77,27 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = function(_, conf)
       conf.defaults.file_ignore_patterns = {
-        "node_modules/", ".git/", ".dist/"
+        "node_modules/",
+        ".git/",
+        ".dist/",
       }
 
       return conf
-    end
-  }
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "cpp",
+        "javascript",
+        "typescript",
+      },
+    },
+  },
 }

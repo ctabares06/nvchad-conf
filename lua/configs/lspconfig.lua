@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls" }
+local servers = { "html", "css" }
 local nvlsp = require "nvchad.configs.lspconfig"
 local mason_registry = require "mason-registry"
 local vue_lsp_path = mason_registry.get_package("vue-language-server"):get_install_path()
