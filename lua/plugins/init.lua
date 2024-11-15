@@ -62,10 +62,27 @@ return {
         "vue-language-server",
         "typescript-language-server",
         "prettierd",
-        "eslintd",
+        "eslint-lsp",
       },
     },
   },
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require "configs.lint"
+    end,
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function(_, conf)
+      conf.defaults.file_ignore_patterns = {
+        "node_modules/", ".git/", ".dist/"
+      }
+
+      return conf
+    end
+  }
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
