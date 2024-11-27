@@ -5,6 +5,8 @@ local options = {
     css = { "prettierd" },
     html = { "prettierd" },
     vue = { "prettierd" },
+    javascript = { "prettierd" },
+    typescript = { "prettierd" },
   },
 
   format_on_save = {
