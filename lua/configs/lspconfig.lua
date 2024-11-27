@@ -4,19 +4,9 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "css" }
 local nvlsp = require "nvchad.configs.lspconfig"
 local mason_registry = require "mason-registry"
 local vue_lsp_path = mason_registry.get_package("vue-language-server"):get_install_path()
-
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
 
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
@@ -39,7 +29,7 @@ lspconfig.ts_ls.setup {
       },
     },
   },
-  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
+  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 }
 
 -- No need to set `hybridMode` to `true` as it's the default value
@@ -47,12 +37,9 @@ lspconfig.volar.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  init_options = {
-    vue = {
-      hybridMode = false,
-    },
-    typescript = {
-      tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
-    },
-  },
+  -- init_options = {
+  --   typescript = {
+  --     tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
+  --   },
+  -- },
 }
