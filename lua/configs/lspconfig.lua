@@ -24,7 +24,7 @@ lspconfig.ts_ls.setup {
     plugins = {
       {
         name = "@vue/typescript-plugin",
-        location = vue_lsp_path,
+        location = vue_lsp_path .. "/node_modules/@vue/language-server",
         languages = { "vue" },
       },
     },
@@ -37,9 +37,9 @@ lspconfig.volar.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  -- init_options = {
-  --   typescript = {
-  --     tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
-  --   },
-  -- },
+  init_options = {
+    typescript = {
+      tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
+    },
+  },
 }
