@@ -20,7 +20,11 @@ lspconfig.ts_ls.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
+  root_dir = lspconfig.util.root_pattern("tsconfig.js", "jsconfig.js", "package.json"),
   init_options = {
+    preferences = {
+      disableSuggestions = true,
+    },
     plugins = {
       {
         name = "@vue/typescript-plugin",
@@ -37,9 +41,4 @@ lspconfig.volar.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  init_options = {
-    typescript = {
-      tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
-    },
-  },
 }

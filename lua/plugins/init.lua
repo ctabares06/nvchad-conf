@@ -44,12 +44,6 @@ return {
 
   -- These are some examples, uncomment them if you want to see them work!
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-  {
     "williamboman/mason.nvim",
     log_level = vim.log.levels.DEBUG,
   },
@@ -62,9 +56,15 @@ return {
         "vue-language-server",
         "typescript-language-server",
         "prettierd",
-        "eslint-lsp",
+        "eslint_d",
       },
     },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
   },
   {
     "mfussenegger/nvim-lint",
@@ -105,6 +105,6 @@ return {
   {
     "tpope/vim-fugitive",
     lazy = true,
-    cmd = {"Git", "G"}
-  }
+    cmd = { "Git", "G" },
+  },
 }
