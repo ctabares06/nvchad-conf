@@ -41,4 +41,12 @@ lspconfig.volar.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
+  init_options = {
+    vue = {
+      hybridMode = false
+    },
+    typescript = {
+      tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
+    },
+  }
 }

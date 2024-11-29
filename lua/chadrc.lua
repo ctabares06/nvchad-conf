@@ -13,4 +13,16 @@ M.base46 = {
   -- },
 }
 
+M.mason = {
+  cmd = true,
+  pkgs = {
+     "clangd",
+        "clang-format",
+        "vue-language-server",
+        "typescript-language-server",
+        "prettierd",
+        "eslint_d",
+  }
+}
+
 return M

@@ -43,35 +43,19 @@ return {
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  {
-    "williamboman/mason.nvim",
-    log_level = vim.log.levels.DEBUG,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
-        "clangd",
-        "clang-format",
-        "vue-language-server",
-        "typescript-language-server",
-        "prettierd",
-        "eslint_d",
-      },
-    },
-  },
+  
   {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
-    end,
+    end
   },
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
     config = function()
       require "configs.lint"
-    end,
+    end
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -104,7 +88,6 @@ return {
   },
   {
     "tpope/vim-fugitive",
-    lazy = true,
     cmd = { "Git", "G" },
   },
 }
