@@ -20,6 +20,22 @@ return {
     end,
   },
   {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "lua_ls",
+        "ts_ls",
+        "emmet_ls",
+        "clangd",
+        "clang-format",
+        "volar",
+        "eslintd",
+        "prettierd",
+        "stylua",
+      },
+    },
+  },
+  {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -43,19 +59,18 @@ return {
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  
   {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
-    end
+    end,
   },
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
     config = function()
       require "configs.lint"
-    end
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -83,6 +98,7 @@ return {
         "cpp",
         "javascript",
         "typescript",
+        "tsx",
       },
     },
   },

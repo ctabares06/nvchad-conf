@@ -11,7 +11,7 @@ map("n", "<leader>dr", "<cmd> DapContinue <CR>", {
   desc = "Debugger Start/Continue debugger",
 })
 
-map("n", "<leader>dP", "<cmd> DapDisconect <CR>", {
+map("n", "<leader>dP", "<cmd> DapDisconnect <CR>", {
   desc = "debugger Disconnect debugger",
 })
 

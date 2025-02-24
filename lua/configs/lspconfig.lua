@@ -16,6 +16,34 @@ lspconfig.clangd.setup {
   capabilities = nvlsp.capabilities,
 }
 
+lspconfig.emmet_ls.setup {
+  capabilities = nvlsp.capabilities,
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  filetypes = {
+    "css",
+    "eruby",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "less",
+    "sass",
+    "scss",
+    "svelte",
+    "pug",
+    "typescriptreact",
+    "vue",
+  },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+  },
+}
+
 lspconfig.ts_ls.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
@@ -43,10 +71,10 @@ lspconfig.volar.setup {
   capabilities = nvlsp.capabilities,
   init_options = {
     vue = {
-      hybridMode = false
+      hybridMode = false,
     },
     typescript = {
       tsdk = vue_lsp_path .. "/node_modules/typescript/lib/",
     },
-  }
+  },
 }
